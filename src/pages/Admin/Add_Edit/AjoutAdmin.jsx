@@ -37,7 +37,7 @@ const AjoutAdmin = () => {
   const addAdmin = async (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
     try {
-      const response = await axios.post("http://localhost:5555/admin/new-admin", {
+      const response = await axios.post("https://az-tend-back.onrender.com/admin/new-admin", {
         nom: formData.Nom,
         prenom: formData.Prenom,
         tel: formData.tel,

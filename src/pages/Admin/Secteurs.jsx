@@ -18,7 +18,7 @@ const Secteurs = () => {
     try {
       setIsLoading(true);
       // Faire une requête GET vers votre backend pour récupérer les secteurs
-      const response = await axios.get("http://localhost:5555/admin/sectors");
+      const response = await axios.get("https://az-tend-back.onrender.com/admin/sectors");
 
       // Mettre à jour l'état avec les données récupérées
       setdataMyTable(response.data || []);
@@ -40,7 +40,7 @@ const Secteurs = () => {
   // Fonction pour gérer l'ajout d'un secteur
   const addSector = async () => {
     try {
-      const response = await axios.post("http://localhost:5555/admin/sector", {
+      const response = await axios.post("https://az-tend-back.onrender.com/admin/sector", {
         title: sectorTitle,
       });
 
@@ -58,7 +58,7 @@ const Secteurs = () => {
       // Requête DELETE vers l'API backend
       const token = localStorage.getItem("token"); // Récupération du token d'authentification
       // const token = "Matoub_3emek";
-      const response = await axios.delete(`http://localhost:5555/admin/sector/${sectorId}`, {
+      const response = await axios.delete(`https://az-tend-back.onrender.com/admin/sector/${sectorId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

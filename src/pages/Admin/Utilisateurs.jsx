@@ -16,7 +16,7 @@ const Utilisateurs = () => {
     try {
       setIsLoading(true);
       // Faire une requête GET vers votre backend pour récupérer les secteurs
-      const response = await axios.get("http://localhost:5555/admin/users");
+      const response = await axios.get("https://az-tend-back.onrender.com/admin/users");
       console.log(response);
 
       // Mettre à jour l'état avec les données récupérées

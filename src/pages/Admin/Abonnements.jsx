@@ -22,7 +22,7 @@ const Abonnements = () => {
   const getMyTable = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:5555/admin/abonnements");
+      const response = await axios.get("https://az-tend-back.onrender.com/admin/abonnements");
 
       setdataMyTable(response.data.subscriptions || []);
     } catch (error) {
@@ -57,7 +57,7 @@ const Abonnements = () => {
     try {
       // Requête DELETE vers l'API backend
       const token = localStorage.getItem("token"); // Récupération du token d'authentification
-      const response = await axios.delete(`http://localhost:5555/admin/abonnement/${SubId}`, {
+      const response = await axios.delete(`https://az-tend-back.onrender.com/admin/abonnement/${SubId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

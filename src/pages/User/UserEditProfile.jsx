@@ -62,7 +62,7 @@ const UserEditProfile = () => {
             };
 
             // Envoyer la requête PUT pour mettre à jour les informations de l'utilisateur
-            const response = await axios.post('http://localhost:5555/admin/update-personal-info', formData, config);
+            const response = await axios.post('https://az-tend-back.onrender.com/admin/update-personal-info', formData, config);
 
             if (response.status === 200) {
                 alert('Profil mis à jour avec succès');

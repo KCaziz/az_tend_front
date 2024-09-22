@@ -17,7 +17,7 @@ function Contacts() {
   const getMyTable = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:5555/admin/messages");
+      const response = await axios.get("https://az-tend-back.onrender.com/admin/messages");
 
       // Set state values
       setdataMyTable(response.data.messages || []);
@@ -31,7 +31,7 @@ function Contacts() {
   const markAsSeenMessage = async (contactId) => {
     try {
       const token = localStorage.getItem("token"); // Récupération du token d'authentification
-      const response = await axios.put(`http://localhost:5555/admin/message/${contactId}`, {
+      const response = await axios.put(`https://az-tend-back.onrender.com/admin/message/${contactId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -51,7 +51,7 @@ function Contacts() {
       // Requête DELETE vers l'API backend
       const token = localStorage.getItem("token"); // Récupération du token d'authentification
       // const token = "Matoub_3emek";
-      const response = await axios.delete(`http://localhost:5555/admin/message/${contactId}`, {
+      const response = await axios.delete(`https://az-tend-back.onrender.com/admin/message/${contactId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

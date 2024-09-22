@@ -15,7 +15,7 @@ export function SignIn() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5555/auth/login", {
+      const response = await axios.post("https://az-tend-back.onrender.com/auth/login", {
         email,
         password,
       });

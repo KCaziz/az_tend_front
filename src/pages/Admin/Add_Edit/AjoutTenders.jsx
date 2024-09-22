@@ -38,7 +38,7 @@ const AddTenderForm = () => {
 
     const fetchSectors = async () => {
       try {
-        const response = await axios.get('http://localhost:5555/admin/sectors');
+        const response = await axios.get('https://az-tend-back.onrender.com/admin/sectors');
         setSectors(response.data);
       } catch (error) {
         console.error("Erreur lors de la récupération des secteurs", error);
@@ -94,7 +94,7 @@ const AddTenderForm = () => {
       // console.log(formData);
       
       // Envoi des données vers l'API
-      const response = await axios.post("http://localhost:5555/admin/tender", formData, {
+      const response = await axios.post("https://az-tend-back.onrender.com/admin/tender", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

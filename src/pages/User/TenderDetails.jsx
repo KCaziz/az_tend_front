@@ -19,7 +19,7 @@ const TenderDetails = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:5555/user/tender/${id}`,
+          `https://az-tend-back.onrender.com/user/tender/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

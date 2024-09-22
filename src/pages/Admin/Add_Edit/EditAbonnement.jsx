@@ -22,7 +22,7 @@ const AjoutAbonnement = () => {
 
     const fetchSubscription = async () => {
       try {        
-        const response = await axios.get(`http://localhost:5555/admin/abo/${SubTo}`, {
+        const response = await axios.get(`https://az-tend-back.onrender.com/admin/abo/${SubTo}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -47,7 +47,7 @@ const AjoutAbonnement = () => {
 
     const fetchSectors = async () => {
       try {
-        const response = await axios.get('http://localhost:5555/admin/sectors');
+        const response = await axios.get('https://az-tend-back.onrender.com/admin/sectors');
         setSectors(response.data);
       } catch (error) {
         console.error("Erreur lors de la récupération des secteurs", error);
@@ -78,7 +78,7 @@ const AjoutAbonnement = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.put(`http://localhost:5555/admin/abonnement/${SubTo}`, {
+      const response = await axios.put(`https://az-tend-back.onrender.com/admin/abonnement/${SubTo}`, {
         userId: selectedUser,
         type,
         sectors: selectedSectors,

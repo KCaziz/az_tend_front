@@ -13,7 +13,7 @@ const UserProfile = () => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get('http://localhost:5555/admin/user', {
+        const response = await axios.get('https://az-tend-back.onrender.com/admin/user', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

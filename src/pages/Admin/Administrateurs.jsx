@@ -18,7 +18,7 @@ function Administrateurs() {
   const getMyTable = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:5555/admin/admins");
+      const response = await axios.get("https://az-tend-back.onrender.com/admin/admins");
       setdataMyTable(response.data.data.users || []); //Merci pour cette ligne youva ^^ j'ai pris tres peut de temps, et beaucoup de plaisir a l'ecrire
     } catch (error) {
       console.error(error);
@@ -32,7 +32,7 @@ function Administrateurs() {
       // Requête DELETE vers l'API backend
       const token = localStorage.getItem("token"); // Récupération du token d'authentification
       // const token = "Matoub_3emek";
-      const response = await axios.delete(`http://localhost:5555/admin/admin/${adminId}`, {
+      const response = await axios.delete(`https://az-tend-back.onrender.com/admin/admin/${adminId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

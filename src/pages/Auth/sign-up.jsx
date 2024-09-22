@@ -55,7 +55,7 @@ export function SignUp() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5555/auth/signup", {
+      const response = await axios.post("https://az-tend-back.onrender.com/auth/signup", {
         nom: formData.nom,
         prenom: formData.prenom,
         tel: formData.tel,

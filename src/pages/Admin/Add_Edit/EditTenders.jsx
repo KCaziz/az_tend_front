@@ -43,7 +43,7 @@ const EditTenderForm = () => {
     const tenderToEdit = JSON.parse(localStorage.getItem('tenderToEdit'));
     const fetchTender = async () => {
       try {
-        const response = await axios.get(`http://localhost:5555/admin/tend/${tenderToEdit}`, {
+        const response = await axios.get(`https://az-tend-back.onrender.com/admin/tend/${tenderToEdit}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -76,7 +76,7 @@ const EditTenderForm = () => {
     fetchTender();
     const fetchSectors = async () => {
       try {
-        const response = await axios.get('http://localhost:5555/admin/sectors');
+        const response = await axios.get('https://az-tend-back.onrender.com/admin/sectors');
         setSectors(response.data);
       } catch (error) {
         console.error("Erreur lors de la récupération des secteurs", error);
@@ -128,7 +128,7 @@ const EditTenderForm = () => {
 
     try {
       // Envoi des données vers l'API
-      const response = await axios.put(`http://localhost:5555/admin/tender/${formData._id}`, formData, {
+      const response = await axios.put(`https://az-tend-back.onrender.com/admin/tender/${formData._id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

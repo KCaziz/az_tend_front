@@ -96,7 +96,7 @@ const TenderList = () => {
   useEffect(() => {
     const fetchSubscription = async (token) => {
       const response = await axios.get(
-        "http://localhost:5555/user/checkSubscription",
+        "https://az-tend-back.onrender.com/user/checkSubscription",
         {
           headers: {
             authorization: `Bearer ${token}`,
@@ -120,19 +120,19 @@ const TenderList = () => {
     }
 
     const fetchTenders = async () => {
-      const response = await axios.get("http://localhost:5555/admin/tenders");
+      const response = await axios.get("https://az-tend-back.onrender.com/admin/tenders");
       setTenders(response.data.tenders);
       setFilteredTenders(response.data.tenders); // Initialiser les tenders filtrés
     };
 
     const fetchSectorsAndEntreprises = async () => {
       const sectorsResponse = await axios.get(
-        "http://localhost:5555/admin/sectors"
+        "https://az-tend-back.onrender.com/admin/sectors"
       );
       setSectors(sectorsResponse.data);
 
       const entreprisesResponse = await axios.get(
-        "http://localhost:5555/admin/entreprises"
+        "https://az-tend-back.onrender.com/admin/entreprises"
       );
       setEntreprises(entreprisesResponse.data.entreprises);
     };

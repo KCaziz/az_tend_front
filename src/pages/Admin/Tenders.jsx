@@ -21,7 +21,7 @@ const Tenders = () => {
     try {
       setIsLoading(true);
       // Faire une requête GET vers votre backend pour récupérer les secteurs
-      const response = await axios.get("http://localhost:5555/admin/tenders");
+      const response = await axios.get("https://az-tend-back.onrender.com/admin/tenders");
       
       // Mettre à jour l'état avec les données récupérées
       setdataMyTable(response.data.tenders || []);      
@@ -42,7 +42,7 @@ const Tenders = () => {
     try {
       // Requête DELETE vers l'API backend
       const token = localStorage.getItem("token"); // Récupération du token d'authentification
-      const response = await axios.delete(`http://localhost:5555/admin/tender/${TendersId}`, {
+      const response = await axios.delete(`https://az-tend-back.onrender.com/admin/tender/${TendersId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
