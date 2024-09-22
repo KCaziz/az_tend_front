@@ -5,6 +5,10 @@ import react from '@vitejs/plugin-react'
 import { resolve } from 'path';
 
 export default defineConfig({
+    server: {
+    port: 5173, // Utilise le port fourni par la plateforme ou 5173 par défaut
+    host: true, // Assure que Vite est accessible sur 0.0.0.0
+  },
   plugins: [react()],
   resolve: {
     alias: {
