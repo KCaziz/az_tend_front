@@ -6,7 +6,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
     server: {
-    host: 'https://az-tend-front.onrender.com', // Remplacer par 'localhost' si nécessaire
+    host: '44.226.145.213', // Remplacer par 'localhost' si nécessaire
     port: 5173, // Port du serveur de développement React
   },
   plugins: [react()],
